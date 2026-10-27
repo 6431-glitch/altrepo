@@ -1,11 +1,43 @@
 {
-  "name": "Duc Nguyen’s Apps",
+  "name": "Duc Nguyen\u2019s Apps",
   "subtitle": "SeamlessReader for AltStore Classic",
   "description": "Official SeamlessReader sideload releases. Add this source in AltStore Classic. Some supported comic sources contain adult content.",
   "iconURL": "https://6431-glitch.github.io/altrepo/assets/icon.png",
   "website": "https://6431-glitch.github.io/altrepo/",
   "tintColor": "#256D51",
   "nsfw": true,
-  "apps": [],
+  "apps": [
+    {
+      "name": "SeamlessReader",
+      "bundleIdentifier": "page.ducnguyen.SeamlessReader",
+      "developerName": "Duc Nguyen",
+      "subtitle": "Read, collect and download comics.",
+      "localizedDescription": "Read comics across sources, keep an offline library, and share downloaded comics with nearby friends. Some sources contain adult content.",
+      "iconURL": "https://6431-glitch.github.io/altrepo/assets/icon.png",
+      "tintColor": "#256D51",
+      "category": "entertainment",
+      "versions": [
+        {
+          "version": "1.1.1",
+          "buildVersion": "11",
+          "minOSVersion": "26.0",
+          "size": 5328940,
+          "date": "2026-10-27T15:33:25.267238+00:00",
+          "downloadURL": "https://github.com/6431-glitch/altrepo/releases/download/v1.1.1-build.11/SeamlessReader.ipa",
+          "localizedDescription": "SeamlessReader 1.1.1 (11)."
+        }
+      ],
+      "appPermissions": {
+        "entitlements": [
+          "beta-reports-active",
+          "com.apple.security.application-groups",
+          "get-task-allow"
+        ],
+        "privacy": {
+          "NSLocalNetworkUsageDescription": "Find your friend\u2019s nearby phone to send and receive downloaded comics directly inside SeamlessReader."
+        }
+      }
+    }
+  ],
   "news": []
 }
