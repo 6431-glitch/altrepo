@@ -1,0 +1,11 @@
+{
+  "name": "Duc Nguyen’s Apps",
+  "subtitle": "SeamlessReader for AltStore Classic",
+  "description": "Official SeamlessReader sideload releases. Add this source in AltStore Classic. Some supported comic sources contain adult content.",
+  "iconURL": "https://6431-glitch.github.io/altrepo/assets/icon.png",
+  "website": "https://6431-glitch.github.io/altrepo/",
+  "tintColor": "#256D51",
+  "nsfw": true,
+  "apps": [],
+  "news": []
+}
