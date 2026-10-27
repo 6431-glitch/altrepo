@@ -1,0 +1,42 @@
+name: Validate AltStore catalog
+on:
+  pull_request:
+  push:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - name: Validate catalog structure and local assets
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          source = json.loads(Path('source.json').read_text())
+          assert source['name'] and isinstance(source['apps'], list)
+          assert isinstance(source['news'], list) and isinstance(source['nsfw'], bool)
+          assert Path('assets/icon.png').is_file() and Path('.nojekyll').is_file()
+          bundles = set()
+          for app in source['apps']:
+              bundle = app['bundleIdentifier']
+              assert bundle not in bundles
+              bundles.add(bundle)
+              for key in ['name', 'developerName', 'localizedDescription', 'iconURL']:
+                  assert isinstance(app[key], str) and app[key]
+              permissions = app['appPermissions']
+              assert isinstance(permissions['entitlements'], list)
+              assert isinstance(permissions['privacy'], dict)
+              assert app['versions']
+              identities = set()
+              for version in app['versions']:
+                  identity = (version['version'], version['buildVersion'])
+                  assert identity not in identities
+                  identities.add(identity)
+                  assert version['downloadURL'].startswith('https://github.com/6431-glitch/altrepo/releases/download/')
+                  assert isinstance(version['size'], int) and version['size'] > 0
+                  assert version['date'] and version['minOSVersion']
+          print('Catalog and assets are valid.')
+          PY
