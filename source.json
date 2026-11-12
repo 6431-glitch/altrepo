@@ -18,6 +18,15 @@
       "category": "entertainment",
       "versions": [
         {
+          "version": "1.1.2",
+          "buildVersion": "12",
+          "minOSVersion": "26.0",
+          "size": 5329241,
+          "date": "2026-11-12T07:43:38.622576+00:00",
+          "downloadURL": "https://github.com/6431-glitch/altrepo/releases/download/v1.1.2-build.12/SeamlessReader.ipa",
+          "localizedDescription": "SeamlessReader 1.1.2 (12)."
+        },
+        {
           "version": "1.1.1",
           "buildVersion": "11",
           "minOSVersion": "26.0",
